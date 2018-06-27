@@ -25,12 +25,9 @@ class MoviesClient: NSObject {
             }
             do{
                 let films = try JSONDecoder().decode([Trending].self, from: data)
-                
                     for movies in films{
-                        
                         completion(movies.title)
                     }
-                
             } catch let jsonerr {
                 print("Error serialising: ", jsonerr)
             }
